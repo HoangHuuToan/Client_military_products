@@ -1,0 +1,172 @@
+// app global css in SCSS form
+body {
+  min-width: 1900px !important;
+  font-size: 16px;
+}
+
+#header {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+}
+
+* :focus-visible {
+  outline: none;
+}
+@font-face {
+  font-family: notoSansJP;
+  src: url('/font/NotoSansJP-VariableFont_wght.ttf');
+}
+
+@font-face {
+  font-family: roboto;
+  src: url('/font/Roboto-Regular.ttf');
+}
+
+* {
+  font-family: notoSansJP;
+}
+
+input[type='checkbox'], input[type='radio'], label[for], select {
+  cursor: pointer;
+  user-select: none;
+}
+
+.fact-item:focus-within,
+.conclusion-item:focus-within {
+  background-color: lightyellow;
+}
+
+// ======================= Rich Text =======================
+.rich-text {
+  width: 100%;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.rich-text.ql-container {
+  font-size: 1rem;
+}
+
+.rich-text .ql-editor {
+  padding: 4px;
+  overflow-y: auto;
+  word-break: break-word;
+}
+
+.rich-text.resize .ql-editor {
+  resize: vertical;
+  min-height: 100%;
+  height: 0;
+}
+
+.rich-text.ql-disabled {
+  background-color: #efefef4d;
+}
+
+.rich-text.ql-bubble .ql-tooltip {
+  border-radius: 0;
+  z-index: 1;
+  padding: 0;
+}
+
+.rich-text .ql-size .ql-picker-item::before,
+.rich-text .ql-size .ql-picker-label::before {
+  content: attr(data-value) !important;
+}
+
+.rich-text .ql-toolbar .ql-formats {
+  float: left;
+}
+
+.rich-text .ql-toolbar .ql-formats:nth-child(5) {
+  clear: left;
+  margin-left: 12px;
+}
+
+.rich-text.ql-snow .ql-tooltip::before {
+  content: none;
+}
+
+.rich-text.ql-snow .ql-picker.ql-font {
+  width: 150px;
+}
+
+.rich-text.ql-snow .ql-picker.ql-size {
+  width: 60px;
+}
+
+/* Set drop list names - -item is the currently selected font, -label is the font's appearance in the drop list*/
+.rich-text.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='notoSansJP']::before,
+.rich-text.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='notoSansJP']::before {
+  content: 'Noto Sans JP';
+  font-family: 'notoSansJP';
+}
+
+.rich-text.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='timesNewRoman']::before,
+.rich-text.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='timesNewRoman']::before {
+  content: 'Times New Roman';
+  font-family: 'Times New Roman';
+}
+
+.rich-text.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='arial']::before,
+.rich-text.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='arial']::before {
+  content: 'Arial';
+  font-family: 'Arial';
+}
+
+.rich-text.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='roboto']::before,
+.rich-text.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='roboto']::before {
+  content: 'Roboto';
+  font-family: 'roboto';
+}
+
+/****************************************************
+ Set the font-family content used for the HTML content.
+ *****************************************************/
+.rich-text .ql-font-arial {
+  font-family: 'Arial';
+}
+
+.rich-text .ql-font-timesNewRoman {
+  font-family: 'Times New Roman';
+}
+
+.rich-text .ql-font-notoSansJP {
+  font-family: 'notoSansJP';
+}
+
+.rich-text .ql-font-roboto {
+  font-family: 'roboto';
+}
+
+// ======================= Select Box =======================
+.select-box {
+  background-color: #fff;
+  font-size: 1rem;
+}
+
+.select-box.filter:focus-within .q-field__native span {
+  display: none;
+}
+
+.select-box.filter .q-field__native input {
+  display: none;
+}
+
+.select-box .q-field__native span {
+  text-overflow: ellipsis;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.select-box.filter:focus-within .q-field__native input {
+  display: block;
+}
+
+// for fix display g not full when select box is english
+.q-field--auto-height .q-field__native, .q-field--auto-height
+.q-field__prefix, .q-field--auto-height .q-field__suffix {
+    line-height: 25px;
+}

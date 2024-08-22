@@ -1,0 +1,37 @@
+import createFact from 'helpers/objectFactory/fact';
+import createConclusion from 'helpers/objectFactory/conclusion';
+
+export default () => ({
+  id: 0,
+  code: '',
+  title: '',
+  titleText: '',
+  approvalSateTL: '',
+  approveRq: false,
+  editor: '',
+  valState: '',
+  transRange: '',
+  transState: false,
+  transRq: false,
+  lastUpdate: '',
+  finalVer: false,
+  pkgExclude: false,
+  field: '',
+  transLang: '',
+  summary: '',
+  nextApprover: '',
+  plantName: '',
+  observationTarget: '',
+  author: '',
+  revisionNum: 0,
+  revisionGroup: 0,
+  scope: {
+    id: 1,
+    scope: '',
+    scopeText: '',
+    scopeTrans: '',
+    comment: '<p><br></p>',
+  },
+  facts: [createFact()],
+  conclusions: [createConclusion()],
+});
